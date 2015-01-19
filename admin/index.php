@@ -1,11 +1,9 @@
-<?php include_once '../common/connect.php' ?>
-
 
 <?php
 
 session_start(); 
 
-include_once('../includes/connections.php');
+include_once('../common/connect.php');
 
 if(isset($_SESSION['logged_in'])){
 ?>
@@ -14,13 +12,13 @@ if(isset($_SESSION['logged_in'])){
 
 <html>
 <head>
-	<title>CMS first time</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>RSVP system</title>
+	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <body>
 	<div class="container">
 		
-		<a href="../../php_cms/index.php" id="logo">CMS</a>
+		<a href="../admin/index.php" id="logo">RSVP</a>
 		<br>
 
 		<ol>
@@ -77,13 +75,13 @@ if(isset($_SESSION['logged_in'])){
 
 <html>
 <head>
-	<title>CMS first time</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>RSVP system</title>
+	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <body>
 	<div class="container">
 		
-		<a href="index.php" id="logo">CMS</a>
+		<a href="../admin/index.php" id="logo">RSVP</a>
 		<br><br>
 		<?php if(isset($error)) { ?>
 

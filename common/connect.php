@@ -1,14 +1,9 @@
-<?php 
 
-$db_host = 'localhost';
-$db_user = 'david';
-$db_pwd = '';
+<?php
 
-$database = 'rsvp';
-$table = 'event_rsvp';
-
-$link = mysqli_connect($db_host, $db_user, $db_pwd);
-
-$select_db = mysqli_select_db($link, "rsvp");
-
+	try{
+	$pdo = new PDO('mysql:host=localhost;dbname=rsvp','david','');
+}catch(PDOException $e){
+	exit('Database error');
+}
 ?>
