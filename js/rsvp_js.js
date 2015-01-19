@@ -15,6 +15,24 @@ if (going = true){
 }
 */
 
+//Highlights the clicked row
+         if($(this).hasClass("normal")){
+            $(this).removeClass("normal").addClass("highlight");
+        }
+        else {
+            $(this).removeClass("highlight").addClass("normal");                                    
+        }     
+
+ //Checks the checkbox
+        var $target = $(event.target);
+        if(!$target.is('input:checkbox')) {
+            
+            $(this).find('input:checkbox').each(function() {
+                if(this.checked) { this.checked = false; }
+                else { this.checked = true;}
+            });
+        }
+    });//End tr click
 });
 
 function formatPhone(obj) {

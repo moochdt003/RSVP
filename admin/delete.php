@@ -1,48 +1,66 @@
-
 <?php
 
-	try{
-	$pdo = new PDO('mysql:host=localhost;dbname=rsvp','david','');
-}catch(PDOException $e){
-	exit('Database error');
-}
+session_start(); 
+
+include_once('../includes/pdoConnect.php');
+include_once('../includes/attendee.php');
+
+$client = new Attendance;
+
+if(isset($_SESSION['logged_in'])){
+	if(isset($_GET['name'])){
+		$name = $_GET['name'];
+
+		$query = $pdo->prepare('DELETE FROM event_rsvp where name = ?');
+		$query->bindValue(1,$name);
+		$query->execute();
+
+		header('Location:delete.php');
+
+	}
+
+$clients = $client->fetch_all();
+//display delete page
 ?>
+<html>
+<head>
+	<title>CMS first time</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+	<div class="container">
+		
+		<a href="../index.php" id="logo">CMS</a>
+		<br><br>
+		<h4>Select the article to delete :</h4>
+		<form action="delete.php" method="get">
+
+			<select onchange="this.form.submit();" name="name">
+				<!--option value=""></option-->
+				<?php foreach ($clients as $client) {?>
+					<option value="<?php echo $client['name'];?>">
+					<?php /*echo $article['article_title']; */ ?>
+				</option>
+				<?php }?>
 
 
-
-<script type="text/javascript">
-
-function ID(){
-
-prompt("what is the number",'number')
-
-}
+		</form>
 
 
-</script>
+		</form>
+			
+	</div>
 
-<?php 
-if(isset($_GET['id'])){
-		$id = $_GET['id'];
-//$id = $_POST['id'];
+</body>
+</html>
 
-
-$query = $pdo->prepare('DELETE FROM event_rsvp where user_ID = ?');
-$query->bindValue(1,$id);
-
-$query->execute();
-echo "successfully deleted";
+<?php
 }else{
-	echo "Not deleted";
+
+header('Location:index.php');
+
 }
 
 
-  
 
 ?>
-<form method="get" action="delete.php">
-
-<input type="text" name="id" placeholder="enter ID">
-<input type="submit" value="Delete">
-
-</form>
