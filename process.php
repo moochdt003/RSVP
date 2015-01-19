@@ -33,7 +33,7 @@ font-size: 12px;
 <div class="inside">
 	<h1>Thank you for you patients,</h1>
 
-			<?php include 'common/connect.php' ?>
+			<?php include 'includes/connect.php' ?>
 
 			<?php
 			if (isset($_POST["submit"])) {

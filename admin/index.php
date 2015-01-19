@@ -3,7 +3,7 @@
 
 session_start(); 
 
-include_once('../common/connect.php');
+include_once('../includes/pdoConnect.php');
 
 if(isset($_SESSION['logged_in'])){
 ?>
