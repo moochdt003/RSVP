@@ -14,17 +14,21 @@ if(isset($_SESSION['logged_in'])){
 <head>
 
 <title>MySQL Table Viewer</title>
-
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
 
 <style type="text/css">
 
 table{
-
-border: 1;
+width:100%;
+font-size: 12px;
+border: 0;
 padding: 0;
-border-spacing: 0;
+border-spacing: 2;
 }
 
+table tr td{
+    height:25px;
+}
 </style>
 </head>
 
@@ -62,20 +66,30 @@ $result = mysqli_store_result($link);
 $fields_num = mysqli_num_fields($result);
 
 echo "<h1>Table: {$table}</h1>";
-echo "<table border='1'><tr>";
+echo "<table border='0'><tr>";
 // printing table headers
 echo "<thead>";
-for($i=0; $i<$fields_num; $i++)
-{
-    $field = mysqli_fetch_field($result);
-    echo "<th>{$field->name}</th>";
-}
+
+    echo "<th>ID</th>
+          <th>Name</th>
+          <th>ID/Passport</th>
+          <th>Attending</th>
+          <th>Partner</br>Attening</th>
+          <th>Partner</br>Details</th>
+          <th>Dietary</th>
+          <th>Dietary</br>Partner</th>
+          <th>Email</th>
+          <th>Telephone</th>
+          <th>Mobile</th>
+          <th>Address</th>
+          <th>Comments</th>";
+
 echo "</tr>\n";
 echo "</thead>";
 // printing table rows
 while($row = mysqli_fetch_row($result))
 {
-    echo "<tr>";
+    echo "<tr class='normal'>";
 
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
