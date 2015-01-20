@@ -25,12 +25,16 @@ $clients = $client->fetch_all();
 <html>
 <head>
 	<title>CMS first time</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<!--link rel="stylesheet" type="text/css" href="../css/style.css"-->
+	<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
+
 </head>
 <body>
+	<?php include_once('../includes/navbar.php');?>
+
 	<div class="container">
 		
-		<a href="../index.php" id="logo">CMS</a>
 		<br><br>
 		<h4>Select the article to delete :</h4>
 		<form action="delete.php" method="get">

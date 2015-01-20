@@ -59,13 +59,15 @@ if(isset($_SESSION['logged_in'])){
 	<head>
 		<title>RSVP: Administration</title>
 		<link rel="stylesheet" type="text/css" href="../css/admin.css">
+		<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
 		<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="../js/rsvp_js.js"></script>
 	</head>
 		<body>
+			<?php include_once('../includes/navbar.php');?>
+
 			<div class="container">
 				
-				<a href="index.php" id="logo">RSVP</a>
 				<br>
 				<h4>Add attendee</h4>
 				<br>
@@ -77,14 +79,12 @@ if(isset($_SESSION['logged_in'])){
 					?>
 
 			
-				<h1>Please enter the details:</h1>
-
-
+				
 		<!--p>Please enter your details:</p-->
 
 				<form method="post" action="add.php" autocomplete="off" onsubmit="return(validate());" >
-					<div class="insideAdd">
-					<table>
+					<div class="insideAdd" style="background-color: #b9c9fe;">
+					<table class="adminView">
 						<tr>
 							<td>Full name:</td>
 							<td><input type="text" name="name" id="name"> </td>
@@ -103,7 +103,7 @@ if(isset($_SESSION['logged_in'])){
 							</td>
 						</tr>
 					</table>
-					<table id="attendingDetails">	
+					<table id="attendingDetails" class="adminView">	
 						<tr>
 							<td>Attending with partner:</td>
 							<td><select name="attending_PartnerBool" id="attending_Partner" onchange="partner();">
@@ -163,7 +163,7 @@ if(isset($_SESSION['logged_in'])){
 							<td><input type="text" name="address" id="address"></td>
 						</tr>
 					</table>	
-					<table>	
+					<table class="adminView">	
 						<tr>
 							<td valign="top">Additional Comments :</td>
 							<td><textarea rows="4" cols="22" name="comments" id="comments"></textarea></td>

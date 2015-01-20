@@ -13,14 +13,18 @@ if(isset($_SESSION['logged_in'])){
 
 <head>
 
-<title>MySQL Table Viewer</title>
-<link rel="stylesheet" type="text/css" href="../css/styles.css">
+<title>RSVP: Log sheet</title>
+<link rel="stylesheet" type="text/css" href="../css/admin.css">
+<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
+<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="../js/rsvp_js.js"></script>
+    </head>
 
 <style type="text/css">
 
 table{
 width:100%;
-font-size: 12px;
+font-size: 11px;
 border: 0;
 padding: 0;
 border-spacing: 2;
@@ -29,17 +33,55 @@ border-spacing: 2;
 table tr td{
     height:25px;
 }
+
+table tr.highlight td {
+    background: #d0dafd;
+}
+
+#box-table-a th
+{
+    
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+    cursor: pointer;
+}
+
+
 </style>
+
+<script type="text/javascript">
+//hides primary key row from result log sheet
+$(document).ready(function() {
+   
+$('td:nth-child(2)').hide();
+
+
+$('#selectAll').toggle(function(){
+    alert('me');
+        $('#box-table-a tbody>tr input:checkbox').attr('checked','checked');
+        $('#hidden').removeAttr('checked');
+    },function(){
+        $('#box-table-a tbody>tr input:checkbox').removeAttr('checked');       
+    });
+
+});
+
+</script>
+
+
 </head>
 
 
 <body>
 
+<?php include_once('../includes/navbar.php');?>
 
 
 
 <!--button name="Delete" value="Delete" type="button" onclick="ID();">Delete</button-->
-
 
 
 
@@ -66,11 +108,12 @@ $result = mysqli_store_result($link);
 $fields_num = mysqli_num_fields($result);
 
 echo "<h1>Table: {$table}</h1>";
-echo "<table border='0'><tr>";
+echo "<table border='0' id='box-table-a'><tr>";
 // printing table headers
 echo "<thead>";
 
-    echo "<th>ID</th>
+    echo "<th><input type='checkbox' name='select' value='selected' class='checkbox_check' /></th>
+           
           <th>Name</th>
           <th>ID/Passport</th>
           <th>Attending</th>
@@ -86,11 +129,12 @@ echo "<thead>";
 
 echo "</tr>\n";
 echo "</thead>";
+echo "<tbody>";
 // printing table rows
 while($row = mysqli_fetch_row($result))
 {
-    echo "<tr class='normal'>";
-
+    echo "<tr class='normal' id='0' >";
+         echo   "<td class='has_cb'><input type='checkbox' name='select' value='checked'/></td>";
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
@@ -100,8 +144,12 @@ while($row = mysqli_fetch_row($result))
 }
 mysqli_free_result($result);
 ?>
+<?php
 
-<p> To return to Admin menu <a href="index.php">click here</a></p>
+echo "</tbody></table>";
+
+
+?>
 
 </body></html>
 <?php

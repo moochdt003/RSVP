@@ -4,26 +4,26 @@ $('#attendingDetails').css('display','none');
 $('#partnerDiet').css('display','none');
 $('#partnerName').css('display','none');
 
-/*var going = $('#attending').val() == 'Yes';
 
-if (going = true){
 
-	alert('i am selected');
-}else{
 
-	alert('do nothing');
-}
-*/
+//Highlighting the rows
 
-//Highlights the clicked row
+   
+     
+    
+    //Click on tr highlights and checks checkbox
+     $("#box-table-a tbody tr").click(function() {
+         var rowCount = $('#box-table-a tbody>tr').length;
+        //Highlights the clicked row
          if($(this).hasClass("normal")){
             $(this).removeClass("normal").addClass("highlight");
         }
         else {
             $(this).removeClass("highlight").addClass("normal");                                    
         }     
-
- //Checks the checkbox
+        
+        //Checks the checkbox
         var $target = $(event.target);
         if(!$target.is('input:checkbox')) {
             
@@ -33,7 +33,14 @@ if (going = true){
             });
         }
     });//End tr click
-});
+    
+
+
+}); //end of document ready(on load :)
+
+
+
+
 
 function formatPhone(obj) {
     var numbers = obj.value.replace(/\D/g, ''),
@@ -43,6 +50,10 @@ function formatPhone(obj) {
         obj.value += (char[i]||'') + numbers[i]; 
     }
 }
+
+
+
+
 
 
 function validate()
@@ -142,6 +153,12 @@ function attendingEvent(){
 	}
 
 }
+
+
+
+
+
+
 
 //This function controls the coming with or with a partner
 function partner(){
