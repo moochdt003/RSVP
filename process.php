@@ -31,7 +31,7 @@ font-size: 12px;
 <div class="content">
 
 <div class="inside">
-	<h1>Thank you for you patients,</h1>
+	<h1>Thank you for your patience,</h1>
 
 			<?php include 'includes/connect.php' ?>
 
@@ -90,7 +90,7 @@ font-size: 12px;
 			}else
 			{
 				
-			echo "<p>Your RSVP form was successfully submitted, Please do not hestitate to contact us if there are any changes to your RSVP details\n</p>";
+			echo "<p>Your RSVP form was successfully submitted, Please do not hestitate to contact us you wouldlike to make changes to your RSVP details\n</p>";
 			echo "<br>";
 			mysqli_close($link);
 			}
