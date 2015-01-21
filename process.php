@@ -90,7 +90,7 @@ font-size: 12px;
 			}else
 			{
 				
-			echo "<p>Your RSVP form was successfully submitted, Please do not hestitate to contact us you wouldlike to make changes to your RSVP details\n</p>";
+			echo "<p>Your RSVP form was successfully submitted, Please do not hestitate to contact us if you would like to make changes to your RSVP details\n</p>";
 			echo "<br>";
 			mysqli_close($link);
 			}

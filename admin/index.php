@@ -99,26 +99,27 @@ $('.hide').css('display','none');
 
 
 </head>
-<body>
+<body style="background-color:Slategrey;">
 	<?php include_once('../includes/navbar.php');?>
 	<div class="container">
 		
-		<a href="../admin/index.php" id="logo">RSVP</a>
+		
 		<br><br>
 		<?php if(isset($error)) { ?>
 
 				<small style ="color:F00;";><?php echo $error;?></small>
 				<br><br><?php 
 			} ?>
-
+			<div class="login_style">
 			<form action="index.php" method="post" autocomplete="off">
 
-				<input type="text" name="username" placeholder="username">
-				<input type="password" name="password" placeholder="password">
-				<input type="submit" value="Login">
+				<p><input type="text" name="username" placeholder="username"></p>
+				<p><input type="password" name="password" placeholder="password"></p>
+				<p><input type="submit" value="Login"></p>
 
 
 			</form>
+		</div>
 	</div></div>
 
 </body>
