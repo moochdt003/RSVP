@@ -192,38 +192,10 @@ echo "</tbody></table>";
 
 
 ?>
-
-<html>
-<head>
-    <title>RSVP system</title>
-    <link rel="stylesheet" type="text/css" href="../css/admin.css">
-</head>
-<body>
-    <div class="container">
-        
-        
-        <br><br>
-        <?php if(isset($error)) { ?>
-
-                <small style ="color:F00;";><?php echo $error;?></small>
-                <br><br><?php 
-            } ?>
-
-            <form action="index.php" method="post" autocomplete="off">
-
-                <input type="text" name="username" placeholder="username">
-                <input type="password" name="password" placeholder="password">
-                <input type="submit" value="Login">
-
-
-            </form>
-    </div>
-</div>
-</body>
-</html>
-
-
 <?php
+header('Location: index.php');
+
+
 }
 
 
