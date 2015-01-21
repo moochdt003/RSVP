@@ -9,7 +9,7 @@ $client = new Attendance;
 
 if(isset($_SESSION['logged_in'])){
 	if(isset($_POST['name'])){
-		$name = $_POST['name'];
+		$name = $_GET['name'];
 
 		$query = $pdo->prepare('DELETE FROM event_rsvp where name = ?');
 		$query->bindValue(1,$name);

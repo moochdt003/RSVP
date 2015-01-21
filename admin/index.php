@@ -86,12 +86,14 @@ if(isset($_SESSION['logged_in'])){
 <head>
 	<title>RSVP system</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function{
+
+
+$(document).ready(function() {
 
 $('.hide').css('display','none');
-
 
 });
 
