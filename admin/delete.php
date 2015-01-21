@@ -8,8 +8,8 @@ include_once('../includes/attendee.php');
 $client = new Attendance;
 
 if(isset($_SESSION['logged_in'])){
-	if(isset($_GET['name'])){
-		$name = $_GET['name'];
+	if(isset($_POST['name'])){
+		$name = $_POST['name'];
 
 		$query = $pdo->prepare('DELETE FROM event_rsvp where name = ?');
 		$query->bindValue(1,$name);
@@ -26,8 +26,7 @@ $clients = $client->fetch_all();
 <head>
 	<title>CMS first time</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
-	<!--link rel="stylesheet" type="text/css" href="../css/style.css"-->
-	<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
+	
 
 </head>
 <body>
@@ -35,25 +34,26 @@ $clients = $client->fetch_all();
 
 	<div class="container">
 		
-		<br><br>
-		<h4>Select the article to delete :</h4>
-		<form action="delete.php" method="get">
+		
+		<h2>Delete entry:</h2>
 
-			<select onchange="this.form.submit();" name="name">
+		<form action="delete.php" method="post">
+
+			<select name="name">
 				<!--option value=""></option-->
 				<?php foreach ($clients as $client) {?>
 					<option value="<?php echo $client['name'];?>">
-					<?php /*echo $article['article_title']; */ ?>
+					<?php echo $client['name'];  ?>
 				</option>
 				<?php }?>
-
+				<input type='submit' Value='Delete Entry'>
 
 		</form>
 
 
 		</form>
 			
-	</div>
+	</div></div>
 
 </body>
 </html>

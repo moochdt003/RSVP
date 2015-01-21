@@ -35,6 +35,13 @@ $('#partnerName').css('display','none');
     });//End tr click
     
 
+  var el = $('#blink');
+setInterval(function() {
+   el.toggleClass('blinking');
+}, 1000);
+
+
+
 
 }); //end of document ready(on load :)
 
@@ -180,3 +187,5 @@ function partner(){
 	}
 
 }
+
+

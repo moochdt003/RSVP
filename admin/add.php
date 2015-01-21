@@ -48,7 +48,7 @@ if(isset($_SESSION['logged_in'])){
 
 
 
-			header('Location:index.php');
+			header('Location:result.php');
 		}
 
 
@@ -59,7 +59,6 @@ if(isset($_SESSION['logged_in'])){
 	<head>
 		<title>RSVP: Administration</title>
 		<link rel="stylesheet" type="text/css" href="../css/admin.css">
-		<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
 		<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="../js/rsvp_js.js"></script>
 	</head>
@@ -68,9 +67,9 @@ if(isset($_SESSION['logged_in'])){
 
 			<div class="container">
 				
-				<br>
-				<h4>Add attendee</h4>
-				<br>
+				
+				<h2>Add entry:</h2>
+			
 				<?php if(isset($error)) { ?>
 
 						<small style ="color:F00;";><?php echo $error;?></small>
@@ -178,7 +177,7 @@ if(isset($_SESSION['logged_in'])){
 					</div>
 				</form>
 					
-			</div>
+			</div></div>
 
 		</body>
 </html>

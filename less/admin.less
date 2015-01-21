@@ -2,28 +2,30 @@ body{
 	
 	font-family:arial;
 	padding-top:0;
-	margin-top:0;
+	margin:0;
+	background-color:#F9F9F9;
 }
+
+.wrapper{
+
+	//max-width:1280px;
+	min-width:990px;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+
 
 .container{
 	
-	//width:500px;
-	//margin:  auto;
+	margin-top:70px;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
 }
 
-a:link, a:visited {
-
-text-decoration:none;
-border-bottom: dotted 1px Slategrey;
-color: Slategrey;
-	
-}
-
-a:hover{
-	
-color:Blue;
-border-bottom: dotted 1px blue;	
-}
 
 p{
 	
@@ -101,26 +103,25 @@ td:nth-child(2)
 
 
 .toolbar{
-//border:1px solid red;	
-//background-color:blue;
-//width:100%;
-//height:50px;
+min-width:880px;
 
 ul{
 	float: right;
-margin-right: 10px;
 margin-top: 0;
 margin-bottom: 0;
 padding-top: 12px;
 list-style:none;
-width:80%;
-
+//width:90%;
+position: absolute;
+right: 0px;
+top: 5px;
+min-width:860px;
 
 }
 
 li{
 	float:left;
-	padding-left:40px;
+	padding-left:30px;
 	list-style:none;
 }
 
@@ -141,18 +142,10 @@ a:hover{
 }
 
 
-
-
-
-
-
-
-
-
 //bullshit
 
 .toolbar {
-  width: 99%;
+  width: 100%;
   margin: 0px 0px 0px 0px;
   padding: 6px 6px 4px 6px;
   height: 40px;
@@ -169,6 +162,28 @@ a:hover{
   background: -webkit-gradient(linear, left top, left bottom, from(#A9A9A9), to(#7A7A7A));
   background: -moz-linear-gradient(top,  #A9A9A9,  #7A7A7A);
   border: solid 1px #6D6D6D;
-  position:relative;
+  position:fixed;
   z-index:999;
+  top:0;
 }
+
+
+h2{
+	
+	margin-left:10px;
+}
+
+.landing{
+
+text-align: center;
+
+
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+#blink{ color: #000; }
+#blink.blinking { color: #CCC; }

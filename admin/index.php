@@ -14,22 +14,31 @@ if(isset($_SESSION['logged_in'])){
 <head>
 	<title>RSVP system</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="../js/rsvp_js.js"></script>
 </head>
-<body>
+<body style="background-color:Slategrey;">
+		<?php include_once('../includes/navbar.php');?>
 	<div class="container">
 		
-		<a href="../admin/index.php" id="logo">RSVP</a>
+		
 		<br>
 
-		<ol>
+		<!--ol>
 			<li><a href="result.php">View RSVP log sheet</a></li>
 			<li><a href="add.php">Add attendee</a></li>
 			<li><a href="delete.php">Delete attendee</a></li>
 			<li><a href="logout.php">Logout</a></li>
 			
-		</ol>
+		</ol-->
+
+		<h1 class="landing">Welcome to Artifex event reporting system</h1> 
+
+			<img src="../images/profile.png" alt="artifex" class="displayed" width="230" height="230">
+<br><br>
+	<h2 class="landing" id="blink">Please select an option on the navigation bar.</h2>
 			
-	</div>
+	</div></div>
 
 </body>
 </html>
@@ -77,8 +86,21 @@ if(isset($_SESSION['logged_in'])){
 <head>
 	<title>RSVP system</title>
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+
+<script type="text/javascript">
+$(document).ready(function{
+
+$('.hide').css('display','none');
+
+
+});
+
+</script>
+
+
 </head>
 <body>
+	<?php include_once('../includes/navbar.php');?>
 	<div class="container">
 		
 		<a href="../admin/index.php" id="logo">RSVP</a>
@@ -97,7 +119,7 @@ if(isset($_SESSION['logged_in'])){
 
 
 			</form>
-	</div>
+	</div></div>
 
 </body>
 </html>

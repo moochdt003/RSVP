@@ -15,7 +15,6 @@ if(isset($_SESSION['logged_in'])){
 
 <title>RSVP: Log sheet</title>
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
-<!--link rel="stylesheet" type="text/css" href="../css/styles.css"-->
 <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/rsvp_js.js"></script>
     </head>
@@ -78,12 +77,15 @@ $('#selectAll').toggle(function(){
 <body>
 
 <?php include_once('../includes/navbar.php');?>
-
+<div class="container">
 
 
 <!--button name="Delete" value="Delete" type="button" onclick="ID();">Delete</button-->
 
-
+<form name="search" action="search.php" method="post">
+    <div align="right" style="margin-right:10px;"><input type="text" name="name" />
+    <input type="submit" name="Submit" value="Search" /></div>
+</form>
 
 
 <?php
@@ -107,7 +109,7 @@ $result = mysqli_store_result($link);
 
 $fields_num = mysqli_num_fields($result);
 
-echo "<h1>Table: {$table}</h1>";
+//echo "<h1>Table: {$table}</h1>";
 echo "<table border='0' id='box-table-a'><tr>";
 // printing table headers
 echo "<thead>";
@@ -199,7 +201,7 @@ echo "</tbody></table>";
 <body>
     <div class="container">
         
-        <a href="../admin/index.php" id="logo">RSVP</a>
+        
         <br><br>
         <?php if(isset($error)) { ?>
 
@@ -216,7 +218,7 @@ echo "</tbody></table>";
 
             </form>
     </div>
-
+</div>
 </body>
 </html>
 
