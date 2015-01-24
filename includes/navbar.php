@@ -8,7 +8,7 @@
 
 <li class="hide"><h3 style="margin-top: 0;">PERFORM ACTIONS :</h3></li>
 <li class="hide"><a href="result.php">View data</li>
-<li class="hide"><a href="delete.php">Delete entry</li>
+<!--li class="hide"><a href="delete.php">Delete entry</li-->
 <li class="hide"><a href="add.php">Add entry</li>
 <!--li class="hide"><a href="search.php">Search attendees</li-->
 <li class="hide"><a href="download.php">Download spreadsheet</li>

@@ -87,8 +87,16 @@ $('#selectAll').toggle(function(){
     <input type="submit" name="Submit" value="Search" /></div>
 </form>
 
+<!--form name="delete" action="del.php" method="post">
+    <input type="submit" name="delete" value="delete" />
+</form-->
+
 
 <?php
+
+
+
+
 if (!$link)
     die("Can't connect to database");
 
@@ -136,7 +144,7 @@ echo "<tbody>";
 while($row = mysqli_fetch_row($result))
 {
     echo "<tr class='normal' id='0' >";
-         echo   "<td class='has_cb'><input type='checkbox' name='select' value='checked'/></td>";
+         echo   "<td class='has_cb'><input type='checkbox' name='checkbox' value='checkbox'/></td>";
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)

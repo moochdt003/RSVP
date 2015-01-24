@@ -1,15 +1,8 @@
-
 <?php
-
 session_start(); 
-
 include_once('../includes/pdoConnect.php');
-
 if(isset($_SESSION['logged_in'])){
 ?>
-
-
-
 <html>
 <head>
 	<title>RSVP system</title>
