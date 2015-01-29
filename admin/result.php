@@ -56,6 +56,7 @@ table tr.highlight td {
 $(document).ready(function() {
    
 $('td:nth-child(2)').hide();
+$('td:nth-child(1)').hide();
 
 
 $('#selectAll').toggle(function(){
@@ -122,20 +123,19 @@ echo "<table border='0' id='box-table-a'><tr>";
 // printing table headers
 echo "<thead>";
 
-    echo "<th><input type='checkbox' name='select' value='selected' class='checkbox_check' /></th>
-           
-          <th>Name</th>
-          <th>ID/Passport</th>
-          <th>Attending</th>
-          <th>Partner</br>Attening</th>
-          <th>Partner</br>Details</th>
-          <th>Dietary</th>
-          <th>Dietary</br>Partner</th>
-          <th>Email</th>
-          <th>Telephone</th>
-          <th>Mobile</th>
-          <th>Address</th>
-          <th>Comments</th>";
+    echo "<!--th><input type='checkbox' name='select' value='selected' class='checkbox_check' /></th-->
+          <th valign='top'>Name</th>
+          <th valign='top'>ID/Passport</th>
+          <th valign='top'>Attending</th>
+          <th valign='top'>Partner</br>Attending</th>
+          <th valign='top'>Partner</br>Details</th>
+          <th valign='top'>Dietary</th>
+          <th valign='top'>Dietary</br>Partner</th>
+          <th valign='top'>Email</th>
+          <th valign='top'>Telephone</th>
+          <th valign='top'>Mobile</th>
+          <th valign='top'>Address</th>
+          <th valign='top'>Comments</th>";
 
 echo "</tr>\n";
 echo "</thead>";
@@ -148,7 +148,7 @@ while($row = mysqli_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-        echo "<td>$cell</td>";
+        echo "<td>&nbsp;&nbsp;$cell</td>";
 
     echo "</tr>\n";
 }

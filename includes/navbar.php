@@ -8,7 +8,7 @@
 
 <li class="hide"><h3 style="margin-top: 0;">PERFORM ACTIONS :</h3></li>
 <li class="hide"><a href="result.php">View data</li>
-<li class="hide"><a href="stats.php">Responses</li-->
+<li class="hide"><a href="stats.php">Statistics</li-->
 <!--li class="hide"><a href="delete.php">Delete entry</li-->
 <li class="hide"><a href="add.php">Add entry</li>
 
@@ -20,5 +20,5 @@
 
 </div>
 
-
+s
 
