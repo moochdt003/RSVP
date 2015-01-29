@@ -1,22 +1,11 @@
-<?php 
-
-$db_host = 'localhost';
-$db_user = 'david';
-$db_pwd = '';
-
-$database = 'rsvp';
-$table = 'event_rsvp';
-
-$link = mysqli_connect($db_host, $db_user, $db_pwd);
-
-$select_db = mysqli_select_db($link, "rsvp");
-
+<?php
+include_once('../includes/connect.php');
 ?>
 
 <html>
 	<head>
-		<title>RSVP: Administration</title>
-		<link rel="stylesheet" type="text/css" href="css/admin.css">
+		<title>RSVP: Statistics</title>
+		<link rel="stylesheet" type="text/css" href="../css/admin.css">
 		<script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="../js/rsvp_js.js"></script>
 	
@@ -57,7 +46,7 @@ table tr.highlight td {
 
 	</head>
 		<body>
-			<?php include_once('includes/navbar.php');?>
+			<?php include_once('../includes/navbar.php');?>
 			<div class="container">
 
 
@@ -85,7 +74,7 @@ while($row = mysqli_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-       echo "<tr>";
+       echo "<tr class='normal' id='0' >";
         echo "<td>$cell</td>";
 }
 mysqli_free_result($result);
@@ -153,7 +142,7 @@ $result = mysqli_store_result($link);
 
 $fields_num = mysqli_num_fields($result);
 
-echo"<h2>Dietary statistics</h2>";
+echo"<h2>Dietary statistics:</h2>";
 echo "<table border='0' id='box-table-a'><tr><thead>
 
 				<th>Standard</th>
@@ -166,7 +155,7 @@ while($row = mysqli_fetch_row($result))
     // $row is array... foreach( .. ) puts every element
     // of $row to $cell variable
     foreach($row as $cell)
-       echo "<tr>";
+       echo "<tr class='normal' id='0' >";
         echo "<td>$cell</td>";
 }
 mysqli_free_result($result);
