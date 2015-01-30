@@ -11,7 +11,6 @@
 <li class="hide"><a href="stats.php">Responses</li-->
 <!--li class="hide"><a href="delete.php">Delete entry</li-->
 <li class="hide"><a href="add.php">Add entry</li>
-
 <li class="hide"><a href="download.php">Download spreadsheet</li>
 <li class="hide"><a href="logout.php" style="font-size:18px;">Logout</a></li>
 <li></li>     
