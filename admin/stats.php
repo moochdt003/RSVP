@@ -52,7 +52,12 @@ table tr.highlight td {
 
 
 <h2>RSVP statistics:</h2>
-
+<ul>
+<li>11 people have responded to the invitaion</li>
+<li>10 people have rsvp'd they will be attending</li>
+<li>5 people will be attending with partners</li>
+</ul>
+<br>
 <?php
 
 mysqli_real_query($link, "select count(*) from event_rsvp");
@@ -65,7 +70,7 @@ $fields_num = mysqli_num_fields($result);
 echo "<table border='0' id='box-table-a'><tr><thead>
 
 				<th>Responses</th>
-				<th>attending</th>
+				<th>Attending</th>
 				<th>Not attending</th>
 				</thead></tr>";
 // printing table rows
@@ -82,7 +87,9 @@ mysqli_free_result($result);
 
 <?php
 
-mysqli_real_query($link, "select count(attending_partner) as attendence_partner from event_rsvp where attending_partner = 'Yes'");
+mysqli_real_query($link, "select(select count(attending) as attendence from event_rsvp where attending = 'Yes')+
+                            (select count(attending_Partner) as attendence from event_rsvp where attending_Partner = 'Yes')AS SumCount");
+
 
 $result = mysqli_store_result($link);
 
@@ -136,7 +143,7 @@ mysqli_free_result($result);
 
 
 
-mysqli_real_query($link, "select count(dietary) as diet from event_rsvp where dietary = 'Standard'");
+mysqli_real_query($link, "select(select count(dietary) as diet from event_rsvp where dietary = 'Standard')+(select count(dietary_Partner) as diet from event_rsvp where dietary_Partner = 'Standard')AS SumCount");
 
 $result = mysqli_store_result($link);
 
@@ -163,7 +170,7 @@ mysqli_free_result($result);
 
 <?php
 
-mysqli_real_query($link, "select count(dietary) as diet from event_rsvp where dietary = 'Halaal'");
+mysqli_real_query($link, "select(select count(dietary) as diet from event_rsvp where dietary = 'Halaal')+(select count(dietary_Partner) as diet from event_rsvp where dietary_Partner = 'Halaal')AS SumCount");
 
 $result = mysqli_store_result($link);
 
@@ -186,7 +193,7 @@ mysqli_free_result($result);
 
 <?php
 
-mysqli_real_query($link, "select count(dietary) as diet from event_rsvp where dietary = 'Vegetarian'");
+mysqli_real_query($link, "select(select count(dietary) as diet from event_rsvp where dietary = 'Vegetarian')+(select count(dietary_Partner) as diet from event_rsvp where dietary_Partner = 'Vegetarian')AS SumCount");
 
 $result = mysqli_store_result($link);
 
