@@ -52,12 +52,10 @@ table tr.highlight td {
 
 
 <h2>RSVP statistics:</h2>
-<ul>
-<li>11 people have responded to the invitaion</li>
-<li>10 people have rsvp'd they will be attending</li>
-<li>5 people will be attending with partners</li>
-</ul>
-<br>
+
+<div class='stats'>
+
+
 <?php
 
 mysqli_real_query($link, "select count(*) from event_rsvp");
@@ -67,6 +65,9 @@ $result = mysqli_store_result($link);
 $fields_num = mysqli_num_fields($result);
 
 
+
+
+echo"<h3>Attendence:</h3>";
 echo "<table border='0' id='box-table-a'><tr><thead>
 
 				<th>Responses</th>
@@ -149,7 +150,7 @@ $result = mysqli_store_result($link);
 
 $fields_num = mysqli_num_fields($result);
 
-echo"<h2>Dietary statistics:</h2>";
+echo"<h3>Dietary:</h3>";
 echo "<table border='0' id='box-table-a'><tr><thead>
 
 				<th>Standard</th>
@@ -213,7 +214,7 @@ while($row = mysqli_fetch_row($result))
 }
 mysqli_free_result($result);
 ?>
-
+</div>
 
 
 

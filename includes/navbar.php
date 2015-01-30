@@ -2,7 +2,7 @@
 
 <div class="toolbar">
 
-<a href="index.php"><img src="../images/arrow-back.png" alt="back" width="40" height="40" style="right:0; position:0;"></a>
+<a href="index.php"><img class='hide' src="../images/arrow-back.png" alt="back" width="40" height="40" style="right:0; position:0;"></a>
 
 <ul>
 
