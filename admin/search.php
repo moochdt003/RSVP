@@ -36,6 +36,7 @@ table tr.highlight td {
     border-bottom: 1px solid #fff;
     color: #039;
     cursor: pointer;
+        font-size: 13px;
 }
 
 
@@ -68,7 +69,7 @@ echo "<thead>";
           <th>Partner</br>Attending</th>
           <th>Partner</br>Details</th>
           <th>Dietary</th>
-          <th>Dietary</br>Partner</th>
+          <th>Partner<br>Dietary</th>
           <th>Email</th>
           <th>Telephone</th>
           <th>Mobile</th>

@@ -1,9 +1,6 @@
 <?php
-
 session_start(); 
-
 include_once('../includes/connect.php');
-
 if(isset($_SESSION['logged_in'])){
 ?>
 
@@ -46,6 +43,8 @@ table tr.highlight td {
     border-bottom: 1px solid #fff;
     color: #039;
     cursor: pointer;
+    font-size: 13px;
+
 }
 
 
@@ -130,7 +129,7 @@ echo "<thead>";
           <th valign='top'>Partner</br>Attending</th>
           <th valign='top'>Partner</br>Details</th>
           <th valign='top'>Dietary</th>
-          <th valign='top'>Dietary</br>Partner</th>
+          <th valign='top'>Partner</br>Dietary</th>
           <th valign='top'>Email</th>
           <th valign='top'>Telephone</th>
           <th valign='top'>Mobile</th>

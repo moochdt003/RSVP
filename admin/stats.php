@@ -51,7 +51,7 @@ table tr.highlight td {
 
 
 
-<h2>RSVP statistics:</h2>
+<h2>Statistics:</h2>
 
 <div class='stats'>
 
@@ -71,7 +71,7 @@ echo"<h3>Attendence:</h3>";
 echo "<table border='0' id='box-table-a'><tr><thead>
 
 				<th>Responses</th>
-				<th>Attending</th>
+				<th>Total attending</th>
 				<th>Not attending</th>
 				</thead></tr>";
 // printing table rows
